@@ -6,8 +6,8 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 
 
-const mainRoute = require("./routes/mainRoute")
-app.use(mainRoute)
+const users = require("./routes/users")
+app.use(users)
 
 app.listen (3000, function(req, res){
   console.log("Flippin' Knowledge");
