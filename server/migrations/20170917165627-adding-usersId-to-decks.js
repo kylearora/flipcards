@@ -4,23 +4,23 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
 
     return queryInterface.addColumn(
-      'flipcards',
-      'deckId',
+      'decks',
+      'userId',
       {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'decks',
-          key: 'id'
-      }
-    })
+          model: "users",
+          key: "id"
+        }
+      })
   },
 
   down: function (queryInterface, Sequelize) {
 
     return queryInterface.removeColumn(
-      'flipcards',
-      'deckId'
+      'decks',
+      'userId'
     )
   }
 };
